@@ -2,12 +2,12 @@ import pyxel
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
-pyxel.init(128, 128, title="Nuit du c0de")
+pyxel.init(152, 152, title="Nuit du c0de")
 
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
-plateau_x = 64
-plateau_y = 115
+plateau_x = 76
+plateau_y = 140
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
