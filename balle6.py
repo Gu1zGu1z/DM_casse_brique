@@ -1,6 +1,6 @@
 import pyxel
 
-# taille de la fenetre 128x128 pixels
+# taille de la fenetre 152x152 pixels
 # ne pas modifier
 pyxel.init(152, 152, title="Nuit du c0de")
 
@@ -13,7 +13,7 @@ def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 120) :
+        if (x < 144) :
             x = x + 2
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
