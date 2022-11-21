@@ -5,10 +5,10 @@ import pyxel, random
 pyxel.init(128, 128, title="Casse brique")
 
 # position initiale du plateau
-# (origine des positions : coin haut gauche)
-plateau_x = 60
-plateau_y = 60
-
+# (origine des positions : milieu inférieur)
+plateau_x = 64
+plateau_y = 115
+vies = 4
 
 # chargement des images
 pyxel.load("images.pyxres")
@@ -33,28 +33,7 @@ def update():
 
     global plateau_x, plateau_y
     # mise à jour de la position du vaisseau
-    vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
-
-    # creation des tirs en fonction de la position du vaisseau
-    tirs_liste = tirs_creation(vaisseau_x, vaisseau_y, tirs_liste)
-
-    # mise a jour des positions des tirs
-    tirs_liste = tirs_deplacement(tirs_liste)
-
-    # creation des ennemis
-    ennemis_liste = ennemis_creation(ennemis_liste)
-
-    # mise a jour des positions des ennemis
-    ennemis_liste = ennemis_deplacement(ennemis_liste)
-
-    # suppression des ennemis et tirs si contact
-    ennemis_suppression()
-
-    # suppression du vaisseau et ennemi si contact
-    vies = vaisseau_suppression(vies)
-
-    # evolution de l'animation des explosions
-    explosions_animation()    
+    plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
 
 # =========================================================
 # == DRAW
@@ -71,20 +50,8 @@ def draw():
         # affichage des vies            
         pyxel.text(5,5, 'VIES:'+ str(vies), 7)
 
-        # vaisseau (carre 8x8)
-        pyxel.blt(vaisseau_x, vaisseau_y, 0, 0, 0, 8, 8)
-
-        # tirs
-        for tir in tirs_liste:
-            pyxel.blt(tir[0], tir[1], 0, 8, 0, 8, 8)
-
-        # ennemis
-        for ennemi in ennemis_liste:
-            pyxel.blt(ennemi[0], ennemi[1], 0, 0, 8, 8, 8)
-
-        # explosions (cercles de plus en plus grands)
-        for explosion in explosions_liste:
-            pyxel.circb(explosion[0]+4, explosion[1]+4, 2*(explosion[2]//4), 8+explosion[2]%3)            
+        # plateau (carre 8x8)
+        pyxel.blt(plateau_x, plateau_y, 0, 0, 0, 8, 8)    
 
     # sinon: GAME OVER
     else:
