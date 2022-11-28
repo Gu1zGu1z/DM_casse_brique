@@ -5,7 +5,7 @@ import pyxel
 pyxel.init(152, 152, title="Nuit du c0de")
 
 # position initiale du vaisseau
-# (origine des positions : coin haut gauche)
+# (origine des positions : milieu du tiers inférieur)
 plateau_x = 76
 plateau_y = 140
 
@@ -19,6 +19,14 @@ def plateau_deplacement(x, y):
         if (x > 0) :
             x = x - 2
     return x, y
+
+# position initiale de la balle
+# (origine des positions : au-dessus du plateau)
+balle_x = 76
+balle_y = 120
+
+def balle(x, y):
+    
 
 
 # =========================================================
