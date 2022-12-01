@@ -2,7 +2,7 @@ import pyxel
 
 # taille de la fenetre 152x152 pixels
 # ne pas modifier
-pyxel.init(152, 152, title="Nuit du c0de")
+pyxel.init(152, 152, title="casse brique")
 
 # position initiale du vaisseau
 # (origine des positions : milieu du tiers inférieur)
@@ -24,9 +24,15 @@ def plateau_deplacement(x, y):
 # (origine des positions : au-dessus du plateau)
 balle_x = 76
 balle_y = 120
+# vitesse de la balle
+vx = x + 2
+vy = y + 2
 
 def balle_deplacement(x, y):
-    pass
+    if x == 144:
+        vx = -vx
+    if y == 0:
+        vy = -vy
     
     
 
