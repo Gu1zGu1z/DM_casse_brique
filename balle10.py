@@ -25,8 +25,20 @@ def plateau_deplacement(x, y):
 balle_x = 76
 balle_y = 120
 
-def balle(x, y):
-    pass
+def balle_deplacement(x, y):
+    if (x = 144):
+        while ( x > 0):   
+            x = x + 5
+    if (x = 0):
+        while ( x < 144):
+            x = x - 5
+    if (y = 144):
+        while ( y > 0):   
+            y = y + 5
+    if (y = 0):
+        while ( y < 144):
+            y = y - 5 
+    return x, y
     
 
 
@@ -36,10 +48,11 @@ def balle(x, y):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y
+    global plateau_x, plateau_y, balle_x, balle_y
 
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 
 
 # =========================================================
@@ -51,7 +64,10 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
 
-    # vaisseau (carre 8x8)
+    # vaisseau (rectangle 8x3)
     pyxel.rect(plateau_x, plateau_y, 8, 3, 1)
+    # balle ( carrée 8x8 )
+    pyxel.rect(balle_x, balle_y)
+        
 
 pyxel.run(update, draw)
