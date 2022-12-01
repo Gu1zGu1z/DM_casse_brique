@@ -29,11 +29,11 @@ def balle_deplacement(x, y):
     x = x + 2
     y = y - 2
     if x == 144:
-        x = x - 2
+        x = x + 2
     if y == 0:
         y = y + 2
     if x == 0:
-        x = x + 2
+        x = x - 2
     if y == 144:
         y = y - 2
         
