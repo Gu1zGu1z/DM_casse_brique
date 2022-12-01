@@ -26,6 +26,7 @@ balle_x = 76
 balle_y = 120
 
 def balle(x, y):
+    pass
     
 
 
