@@ -26,19 +26,7 @@ balle_x = 76
 balle_y = 120
 
 def balle_deplacement(x, y):
-    if (x < 144):
-        while ( x != 0):   
-            x = x + 5
-    if (x > 0):
-        while ( x != 144):
-            x = x - 5
-    if (y < 144):
-        while ( y != 0):   
-            y = y + 5
-    if (y > 0):
-        while ( y != 144):
-            y = y - 5 
-    return x, y
+    pass
     
 
 
