@@ -33,7 +33,7 @@ def balle_deplacement(x, y):
     if x == 144:
         x = x - 2
         while x != 0:
-            x == x - 2:
+            x == x - 2
         
     if y == 144:
         y = y - 2
