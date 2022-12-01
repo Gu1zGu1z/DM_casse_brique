@@ -25,8 +25,8 @@ def plateau_deplacement(x, y):
 balle_x = 76
 balle_y = 120
 # vitesse de la balle
-vx = x + 2
-vy = y + 2
+vx = balle_x + 2
+vy = balle_y + 2
 
 def balle_deplacement(x, y):
     if x == 144:
