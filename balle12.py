@@ -67,7 +67,7 @@ def draw():
     # vaisseau (rectangle 8x3)
     pyxel.rect(plateau_x, plateau_y, 8, 3, 1)
     # balle ( carrée 8x8 )
-    pyxel.rect(balle_x, balle_y)
+    pyxel.rect(balle_x, balle_y, 8, 8, 1)
         
 
 pyxel.run(update, draw)
