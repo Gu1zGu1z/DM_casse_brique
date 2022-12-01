@@ -36,7 +36,7 @@ def balle_deplacement(vx, vy, x, y):
     if y == 0:
         vy = -vy
         
-    return x, y
+    return vx, vy, x, y
     
     
 
