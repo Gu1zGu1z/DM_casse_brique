@@ -25,16 +25,16 @@ def plateau_deplacement(x, y):
 balle_x = 76
 balle_y = 120
 def balle_deplacement(x, y):
-    vx = x + 2
-    vy = y + 2
+    x = x + 2
+    y = y + 2
     if x == 144:
-        vx = - vx
+        x = -x
     if x == 0:
-        vx = -vx
+        x = -x
     if y == 144:
-        vy = -vy
+        y = -y
     if y == 0:
-        vy = -vy
+        y = -y
         
     return  x, y
     
