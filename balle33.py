@@ -24,19 +24,17 @@ def plateau_deplacement(x, y):
 # (origine des positions : au-dessus du plateau)
 balle_x = 76
 balle_y = 120
-
-def balle_deplacement(x, y):
-    x = x + 2
-    y = y - 2
-    while x != 144:
-        x = x + 2
+vx = x + 2
+vy = y + 2
+def balle_deplacement(vx, vy, x, y):
     if x == 144:
-        x = x - 2
-        while x != 0:
-            x == x - 2
-        
+        vx = - vx
+    if x == 0:
+        vx = -vx
     if y == 144:
-        y = y - 2
+        vy = -vy
+    if y == 0:
+        vy = -vy
         
     return x, y
     
