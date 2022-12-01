@@ -69,5 +69,5 @@ def draw():
     # balle ( carrée 8x8 )
     pyxel.rect(balle_x, balle_y, 8, 8, 1)
         
-
+# https://kitao.github.io/pyxel/wasm/launcher/?run=Gu1zGu1z.DM_casse_brique.balle13
 pyxel.run(update, draw)
