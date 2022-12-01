@@ -24,15 +24,14 @@ def plateau_deplacement(x, y):
 # (origine des positions : au-dessus du plateau)
 balle_x = 76
 balle_y = 120
-# vitesse de la balle
-vx = balle_x + 2
-vy = balle_y + 2
 
 def balle_deplacement(x, y):
+    x = x + 2
+    y = y + 2
     if x == 144:
-        vx = -vx
+        x = x - 2
     if y == 0:
-        vy = -vy
+        y = y - 2
     
     
 
@@ -47,6 +46,8 @@ def update():
 
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+    # mise à jour de la position de la balle
+    balle_x, balle_y = balle_deplaceemnt(balle_x, balle_y)
     
 
 # =========================================================
