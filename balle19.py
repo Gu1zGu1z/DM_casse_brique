@@ -41,8 +41,7 @@ def update():
 
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
-    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
-
+    
 
 # =========================================================
 # == DRAW
@@ -55,6 +54,8 @@ def draw():
 
     # vaisseau (rectangle 8x3)
     pyxel.rect(plateau_x, plateau_y, 8, 3, 1)
+    # balle ( carrée 8x8 )
+    pyxel.rect(balle_x, balle_y, 8, 8, 1)
     
         
 # https://kitao.github.io/pyxel/wasm/launcher/?run=Gu1zGu1z.DM_casse_brique.balle13
