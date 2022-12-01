@@ -47,7 +47,7 @@ def update():
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     # mise à jour de la position de la balle
-    balle_x, balle_y = balle_deplaceemnt(balle_x, balle_y)
+    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
 
 # =========================================================
