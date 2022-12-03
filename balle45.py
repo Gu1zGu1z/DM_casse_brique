@@ -26,21 +26,8 @@ def plateau_deplacement(x, y):
 balle_x = 76
 balle_y = 120
 
-def balle_deplacement(x, y):
-    x = x + 1
-    y = y - 1
-    if balle_x == 0:
-        x = x + 1
-    if balle_x == 158:
-        x = x - 1
-    if balle_y == 0:
-        y = y + 1
-    if balle_y == 148:
-        y = y - 1
-        
-        
-    return x, y
-    
+def balle_deplacement(x,y):
+    pass
 
 
 # =========================================================
