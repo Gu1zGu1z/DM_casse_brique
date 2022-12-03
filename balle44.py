@@ -1,7 +1,6 @@
 import pyxel
 
 # taille de la fenetre 152x152 pixels
-# ne pas modifier
 pyxel.init(152, 152, title="casse brique")
 
 # position initiale du vaisseau
@@ -28,6 +27,8 @@ balle_x = 76
 balle_y = 120
 
 def balle_deplacement(x, y):
+    x = x + 1
+    y = y - 1
     if balle_x == 0:
         x = x + 1
     if balle_x == 158:
@@ -69,7 +70,6 @@ def draw():
     pyxel.rect(plateau_x, plateau_y, 8, 3, 1)
     # balle ( carrée 8x8 )
     pyxel.circ(balle_x, balle_y, rayon, 2)
-    pyxel.text(200, 10,"score : %s " % str(score), 7)
     pyxel.text(200, 20,"vie : %s " %str(vie), 7)
     
     
