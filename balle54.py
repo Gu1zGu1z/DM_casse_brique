@@ -8,7 +8,7 @@ pyxel.init(152, 152, title="casse brique")
 plateau_x = 76
 plateau_y = 140
 vie = 3
-blocs_liste = []
+
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -22,27 +22,18 @@ def plateau_deplacement(x, y):
     return x, y
 
 
-def blocs_creation(blocs_liste):
-    """création des blocs"""
-
-    # un ennemi par seconde
-    if (pyxel.frame_count % 30 == 0):
-        blocs_liste.append([random.randint(0, 120), 0])
-    return blocs_creation
-
 # =========================================================
 # == UPDATE
 # =========================================================
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, blocs_liste
+    global plateau_x, plateau_y
 
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     
-    # creation des blocs
-    blocs_liste = blocs_creation(blocs_liste)
+
    
 
 # =========================================================
@@ -57,9 +48,7 @@ def draw():
     # vaisseau (rectangle 8x3)
     pyxel.rect(plateau_x, plateau_y, 8, 3, 1 )
     pyxel.text(100, 20,"vie : %s " %str(vie), 7)
-    # blocs
-    for blocs in blocs_liste:
-        pyxel.rect(blocs[0], blocs[1], 8, 8, 8)   
+   
     
     
         
