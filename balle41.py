@@ -28,28 +28,16 @@ balle_x = 76
 balle_y = 120
 
 def balle_deplacement(x, y):
-    global balle_x, balle_y, balle, vie
-    x -= balle_x
-    y -= balle_y
-    if y <= rayon :
-        balle_x = balle_x
-        balle_y = -balle_y
-    elif x <= rayon :
-        balle_x = -balle_x
-        balle_y = balle_y
-    elif x >= (152-rayon) :
-        balle_x = -balle_x
-        balle_y = balle_y
-    elif y >= (140-rayon):
-        if (plateforme_x-rayon)<x<(plateforme_x+50-rayon) :
-            balle_x = balle_x
-            balle_y = -balle_y
-        elif (plateforme_x-rayon)>x:
-            vie -= 1
-            balle = False
-        elif x>(plateforme_x+50-rayon) :
-            vie -= 1
-            balle = False
+    if balle_x = 0:
+        x = x + 1
+    if balle_x = 158:
+        x = x - 1
+    if balle_y = 0:
+        y = y + 1
+    if balle_y = 148:
+        y = y - 1
+        
+        
     return x, y
     
 
@@ -80,10 +68,10 @@ def draw():
     # vaisseau (rectangle 8x3)
     pyxel.rect(plateau_x, plateau_y, 8, 3, 1)
     # balle ( carrée 8x8 )
-    pyxel.rect(balle_x, balle_y, 8, 8, 1)
+    pyxel.circ(balle_x, balle_y, rayon, 2)
     pyxel.text(200, 10,"score : %s " % str(score), 7)
     pyxel.text(200, 20,"vie : %s " %str(vie), 7)
-    pyxel.circ(x, y, rayon, 2)
+    
     
         
 # https://kitao.github.io/pyxel/wasm/launcher/?run=Gu1zGu1z.DM_casse_brique.balle13
