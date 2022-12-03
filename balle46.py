@@ -7,7 +7,6 @@ pyxel.init(152, 152, title="casse brique")
 # (origine des positions : milieu du tiers inférieur)
 plateau_x = 76
 plateau_y = 140
-balle = False
 vie = 3
 
 def plateau_deplacement(x, y):
@@ -26,9 +25,10 @@ def plateau_deplacement(x, y):
 balle_x = 76
 balle_y = 120
 
-def balle_deplacement(x,y):
-    pass
-
+def balle_deplacement(x, y):
+    x = x + 1
+    y = y + 1
+return x ,y
 
 # =========================================================
 # == UPDATE
