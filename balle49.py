@@ -20,13 +20,6 @@ def plateau_deplacement(x, y):
             x = x - 2
     return x, y
 
-# position initiale de la balle
-# (origine des positions : au-dessus du plateau)
-balle_x = 76
-balle_y = 120
-
-def balle_deplacement(x, y):
-    pass
 
 # =========================================================
 # == UPDATE
@@ -36,12 +29,9 @@ def update():
 
     global plateau_x, plateau_y, balle_x, balle_y
 
-    # mise à jour de la position du vaisseau
+    # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
-    # mise à jour de la position de la balle
-    pass
-    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
-    
+   
 
 # =========================================================
 # == DRAW
@@ -53,9 +43,7 @@ def draw():
     pyxel.cls(0)
 
     # vaisseau (rectangle 8x3)
-    pyxel.rect(plateau_x, plateau_y, 8, 3, 1)
-    # balle ( carrée 8x8 )
-    pyxel.circ(balle_x, balle_y, rayon, 2)
+    pyxel.rect(plateau_x, plateau_y, 8, 3, 1 )
     pyxel.text(200, 20,"vie : %s " %str(vie), 7)
     
     
