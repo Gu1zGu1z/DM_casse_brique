@@ -44,7 +44,7 @@ def draw():
 
     # vaisseau (rectangle 8x3)
     pyxel.rect(plateau_x, plateau_y, 8, 3, 1 )
-    pyxel.text(200, 20,"vie : %s " %str(vie), 7)
+    pyxel.text(148, 20,"vie : %s " %str(vie), 7)
     
     
         
