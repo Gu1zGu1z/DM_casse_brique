@@ -1,4 +1,4 @@
-import pyxel
+import pyxel, random
 
 # taille de la fenetre 152x152 pixels
 pyxel.init(152, 152, title="casse brique")
