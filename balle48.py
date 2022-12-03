@@ -26,9 +26,7 @@ balle_x = 76
 balle_y = 120
 
 def balle_deplacement(x, y):
-    x = x + 1
-    y = y + 1
-    return x ,y
+    pass
 
 # =========================================================
 # == UPDATE
@@ -41,6 +39,7 @@ def update():
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     # mise à jour de la position de la balle
+    pass
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
 
