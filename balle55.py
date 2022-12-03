@@ -7,7 +7,7 @@ pyxel.init(152, 152, title="casse brique")
 # (origine des positions : milieu du tiers inférieur)
 plateau_x = 76
 plateau_y = 140
-vie = 3
+vies = 3
 
 
 def plateau_deplacement(x, y):
@@ -47,7 +47,7 @@ def draw():
 
     # vaisseau (rectangle 8x3)
     pyxel.rect(plateau_x, plateau_y, 8, 3, 1 )
-    pyxel.text(100, 20,"vie : %s " %str(vie), 7)
+    pyxel.text(100, 10,"vie : %s " %str(vies), 7)
    
     
     
