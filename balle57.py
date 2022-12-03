@@ -14,7 +14,7 @@ def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 140) :
+        if (x < 138) :
             x = x + 2
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
@@ -46,8 +46,8 @@ def draw():
     pyxel.cls(0)
 
     # vaisseau (rectangle 8x3)
-    pyxel.rect(plateau_x, plateau_y, 12, 3, 1 )
-    pyxel.text(110, 10,"vie : %s " %str(vies), 7)
+    pyxel.rect(plateau_x, plateau_y, 14, 3, 1 )
+    pyxel.text(110, 10,"vies : %s " %str(vies), 7)
    
     
     
