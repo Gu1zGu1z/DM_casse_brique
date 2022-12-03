@@ -8,6 +8,8 @@ pyxel.init(152, 152, title="casse brique")
 # (origine des positions : milieu du tiers inférieur)
 plateau_x = 76
 plateau_y = 140
+balle = False
+vie = 3
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -33,10 +35,10 @@ def balle_deplacement(x, y):
         balle_x = balle_x
         balle_y = -balle_y
     elif x <= rayon :
-        vitesse_balle_x = -vitesse_balle_x
-        vitesse_balle_y = vitesse_balle_y
+        balle_x = -balle_x
+        balle_y = balle_y
     elif x >= (152-rayon) :
-        balle_x = -vballe_x
+        balle_x = -balle_x
         balle_y = balle_y
     elif y >= (140-rayon):
         if (plateforme_x-rayon)<x<(plateforme_x+50-rayon) :
