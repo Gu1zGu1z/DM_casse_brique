@@ -36,7 +36,7 @@ def blocs_creation(blocs_liste):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, balle_x, balle_y
+    global plateau_x, plateau_y, blocs_liste
 
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
