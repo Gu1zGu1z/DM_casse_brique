@@ -5,8 +5,8 @@ config = {
     'taille_x' : 152, \
     'taille_y' : 152, \
     'titre' : 'casse briques', \
-    'plateau_w' : 14, \
-    'plateau_h' : 3,  \
+    'plateau_w' : 14, \ # largeur du plateau
+    'plateau_h' : 3,  \ # hauteur du plateau
     'vies' : 20, \
     'rayon_balle': 2, \
     'vitesse_max' : 15, \
@@ -141,7 +141,7 @@ def balle_deplacement(x, y, angle, x_max = 152, y_max = 140):
 
     # la vitesse augmente avec le temps 
     vitesse_initiale = niveau + 2
-    vitesse = vitesse_initiale + pyxel.floor(temps / 10000)
+    vitesse = vitesse_initiale + pyxel.floor(temps / 50000)
     if (vitesse > config['vitesse_max']):
         vitesse = config['vitesse_max']
 
