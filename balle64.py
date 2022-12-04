@@ -29,7 +29,7 @@ def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < (config['taille_x'] - config['plateau_w']):
+        if (x < config['taille_x'] - config['plateau_w']):
             x = x + 2
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
