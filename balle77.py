@@ -76,11 +76,11 @@ def niveau_generation(niveau=1):
         tab.append({ 'x' : 100, 'y' : 30, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 3, 'couleur' : 4})
 
     elif (niveau == 3):
-        tab.append({ 'x' : 30, 'y' : 10, 'w' : 20, 'h' : 5, 'type' : 'explosion', 'vie' : 5, 'couleur': 5})
+        tab.append({ 'x' : 30, 'y' : 10, 'w' : 10, 'h' : 2, 'type' : 'explosion', 'vie' : 5, 'couleur': 5})
         tab.append({ 'x' : 70, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 3, 'couleur' : 4})
-        tab.append({ 'x' : 110, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 1, 'couleur' : 4})
-        tab.append({ 'x' : 20, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'facile', 'vie' : 1, 'couleur' : 3})
-        tab.append({ 'x' : 60, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'facile', 'vie' : 1, 'couleur' : 3})
+        tab.append({ 'x' : 110, 'y' : 50, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 1, 'couleur' : 4})
+        tab.append({ 'x' : 20, 'y' : 50, 'w' : 30, 'h' : 3, 'type' : 'facile', 'vie' : 1, 'couleur' : 3})
+        tab.append({ 'x' : 60, 'y' : 80, 'w' : 30, 'h' : 3, 'type' : 'facile', 'vie' : 1, 'couleur' : 3})
 
 
     return tab
