@@ -237,8 +237,8 @@ def draw():
     if (config['vies'] < 1):
         # jeu terminé
         pyxel.text(50, 50, "GAME OVER", 7)   
-        pyxel.text(40, 60, "Appuyer sur ENTREE ", 7)
-        pyxel.text(50, 80, "BRAVOOOOOOOOO !", 7)
+        pyxel.text(40, 60, "Appuyez sur ENTREE ", 7)
+        pyxel.text(50, 80, "Essayez de faire mieux !", 7)
         if pyxel.btn(pyxel.KEY_RETURN):
             pyxel.quit()
 
@@ -262,8 +262,8 @@ def draw():
         if (niveau_termine):
             global niveau
             pyxel.text(50, 50, "NIVEAU %s TERMINE" % niveau, 7)   
-            pyxel.text(40, 60, "Appuyer sur ENTREE ", 7)  
-            pyxel.text(50, 80, "Continue !", 7) 
+            pyxel.text(40, 60, "Appuyez sur ENTREE ", 7)  
+            pyxel.text(50, 80, "Continuez !", 7) 
             if pyxel.btn(pyxel.KEY_RETURN):
                 niveau = niveau + 1
                 if niveau > config['niveau_max']:
