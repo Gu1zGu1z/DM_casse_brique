@@ -10,7 +10,7 @@ config = {
     'vies' : 20, \
     'rayon_balle': 2, \
     'vitesse_max' : 15, \
-    'niveau_max' : 3 \
+    'niveau_max' : 3,
     'score' : 0
 }
 # défini la taille de la fenêtre et son titre
