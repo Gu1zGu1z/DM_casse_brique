@@ -1,17 +1,18 @@
 import pyxel, random
 
-# taille de la fenetre 152x152 pixels
+# défini les 
 config = { 
     'taille_x' : 152, \
     'taille_y' : 152, \
     'titre' : 'casse briques', \
-    'plateau_w' : 14, \ # largeur du plateau
-    'plateau_h' : 3,  \ # hauteur du plateau
+    'plateau_w' : 14, \ 
+    'plateau_h' : 3,  \ 
     'vies' : 20, \
     'rayon_balle': 2, \
     'vitesse_max' : 15, \
     'niveau_max' : 3
 }
+# défini la taille de la fenêtre et son titre
 pyxel.init(config['taille_x'], config['taille_y'], title=config['titre'])
 
 # ----------- Niveau ---------------------------
@@ -28,7 +29,7 @@ def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 138) :
+        if (x < (config['taille_x'] - (config['plateau_w'])) :
             x = x + 2
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
