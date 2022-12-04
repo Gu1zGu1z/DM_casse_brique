@@ -18,6 +18,7 @@ pyxel.init(config['taille_x'], config['taille_y'], title=config['titre'])
 # ----------- Niveau ---------------------------
 niveau = 1
 temps = 1
+score = 0
 
 # ----------- Plateau --------------------------
 # position initiale du plateau
@@ -69,12 +70,14 @@ def niveau_generation(niveau=1):
         tab.append({ 'x' : 60, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'facile', 'vie' : 1, 'couleur' : 3})
 
     elif (niveau == 2):
+        score = score + 30
         tab.append({ 'x' : 20, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 3, 'couleur' : 4})
         tab.append({ 'x' : 20, 'y' : 30, 'w' : 30, 'h' : 3, 'type' : 'facile', 'vie' : 3, 'couleur' : 3})
         tab.append({ 'x' : 100, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'facile', 'vie' : 3, 'couleur' : 3})
         tab.append({ 'x' : 100, 'y' : 30, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 3, 'couleur' : 4})
 
     elif (niveau == 3):
+        score = score + 50
         tab.append({ 'x' : 30, 'y' : 10, 'w' : 20, 'h' : 5, 'type' : 'explosion', 'vie' : 5, 'couleur': 5})
         tab.append({ 'x' : 70, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 3, 'couleur' : 4})
         tab.append({ 'x' : 110, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 1, 'couleur' : 3})
@@ -88,6 +91,7 @@ def brique_explosion():
     # lors d'une explosion, toutes les briques explosent !
     for brique in tableau:
         brique['vie'] = 0
+        score = score + 20
 
 def brique_collision(x, y, r):
     # dit si le cercle en (x, y), rayon r touche une brique du tableau
@@ -98,6 +102,7 @@ def brique_collision(x, y, r):
             # destruction progressive de la brique
             # les briques faciles sont détruites en 1 coup
             brique['vie'] = brique['vie'] - 1
+            score = score + 10
 
             if brique['type'] == 'explosion':
                 brique_explosion()
@@ -237,6 +242,7 @@ def draw():
         # plateau (rectangle 14x3)
         pyxel.rect(plateau_x, plateau_y, config['plateau_w'], config['plateau_h'], 1)
         pyxel.text(110, 10,"vies : %s " %str(config['vies']), 7)
+        pyxel.text(110, 20,"score : %s " %str(score), 7)
 
         # balle (cercle)
         pyxel.circ(balle_x, balle_y, config['rayon_balle'], 2)
