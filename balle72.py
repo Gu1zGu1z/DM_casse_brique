@@ -243,8 +243,8 @@ def draw():
     else:
         # plateau (rectangle 14x3)
         pyxel.rect(plateau_x, plateau_y, config['plateau_w'], config['plateau_h'], 1)
-        pyxel.text(110, 10,"vies : %s " %str(config['vies']), 7)
-        pyxel.text(110, 20,"score : %s " %str(temps + config['score']), 7)
+        pyxel.text(100, 10,"vies : %s " %str(config['vies']), 5)
+        pyxel.text(100, 20,"score : %s " %str(temps + config['score']), 5)
 
         # balle (cercle)
         pyxel.circ(balle_x, balle_y, config['rayon_balle'], 2)
