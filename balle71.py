@@ -90,7 +90,7 @@ def brique_explosion():
     for brique in tableau:
         brique['vie'] = 0
     global config
-    onfig['score'] = config['score'] + 50
+    config['score'] = config['score'] + 100
        
 
 def brique_collision(x, y, r):
@@ -103,7 +103,7 @@ def brique_collision(x, y, r):
             # les briques faciles sont détruites en 1 coup
             brique['vie'] = brique['vie'] - 1
             global config
-            config['score'] = config['score'] + 20
+            config['score'] = config['score'] + 50
             
             if brique['type'] == 'explosion':
                 brique_explosion()
@@ -235,7 +235,8 @@ def draw():
     if (config['vies'] < 1):
         # jeu terminé
         pyxel.text(50, 50, "GAME OVER", 7)   
-        pyxel.text(40, 60, "Appuyer sur RETURN ", 7)   
+        pyxel.text(40, 60, "Appuyer sur ENTREE ", 7)
+        pyxel.text(50, 80, "BRAVOOOOOOOOO !", 7)
         if pyxel.btn(pyxel.KEY_RETURN):
             pyxel.quit()
 
@@ -259,8 +260,8 @@ def draw():
         if (niveau_termine):
             global niveau
             pyxel.text(50, 50, "NIVEAU %s TERMINE" % niveau, 7)   
-            pyxel.text(40, 60, "Appuyer sur RETURN ", 7)  
-            pyxel.text(50, 80, "Bravo !", 7) 
+            pyxel.text(40, 60, "Appuyer sur ENTREE ", 7)  
+            pyxel.text(50, 80, "Continue !", 7) 
             if pyxel.btn(pyxel.KEY_RETURN):
                 niveau = niveau + 1
                 if niveau > config['niveau_max']:
