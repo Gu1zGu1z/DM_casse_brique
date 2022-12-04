@@ -11,7 +11,6 @@ config = {
     'rayon_balle': 2, \
     'vitesse_max' : 15, \
     'niveau_max' : 3,
-    'score' : 0
 }
 # défini la taille de la fenêtre et son titre
 pyxel.init(config['taille_x'], config['taille_y'], title=config['titre'])
@@ -207,12 +206,12 @@ def update():
 
     global plateau_x, plateau_y
     global balle_x, balle_y, balle_angle, temps
-
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
 
     # la vitesse de la balle augmente avec le temps
     temps = temps + 1
+  
         
     # mise à jour de la position de la balle
     balle_x, balle_y, balle_angle = balle_deplacement(balle_x, balle_y, balle_angle)
@@ -239,7 +238,7 @@ def draw():
         # plateau (rectangle 14x3)
         pyxel.rect(plateau_x, plateau_y, config['plateau_w'], config['plateau_h'], 1)
         pyxel.text(110, 10,"vies : %s " %str(config['vies']), 7)
-        pyxel.text(110, 20,"score : %s " %str(score), 7)
+        pyxel.text(110, 20,"score : %s " %str(temps), 7)
 
         # balle (cercle)
         pyxel.circ(balle_x, balle_y, config['rayon_balle'], 2)
