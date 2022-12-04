@@ -11,6 +11,7 @@ config = {
     'rayon_balle': 2, \
     'vitesse_max' : 15, \
     'niveau_max' : 3,
+    'score' : 0
 }
 # défini la taille de la fenêtre et son titre
 pyxel.init(config['taille_x'], config['taille_y'], title=config['titre'])
@@ -88,6 +89,8 @@ def brique_explosion():
     # lors d'une explosion, toutes les briques explosent !
     for brique in tableau:
         brique['vie'] = 0
+    global config
+    onfig['score'] = config['score'] + 50
        
 
 def brique_collision(x, y, r):
@@ -99,6 +102,8 @@ def brique_collision(x, y, r):
             # destruction progressive de la brique
             # les briques faciles sont détruites en 1 coup
             brique['vie'] = brique['vie'] - 1
+            global config
+            config['score'] = config['score'] + 20
             
             if brique['type'] == 'explosion':
                 brique_explosion()
@@ -238,7 +243,7 @@ def draw():
         # plateau (rectangle 14x3)
         pyxel.rect(plateau_x, plateau_y, config['plateau_w'], config['plateau_h'], 1)
         pyxel.text(110, 10,"vies : %s " %str(config['vies']), 7)
-        pyxel.text(110, 20,"score : %s " %str(temps), 7)
+        pyxel.text(110, 20,"score : %s " %str(temps + config['score']), 7)
 
         # balle (cercle)
         pyxel.circ(balle_x, balle_y, config['rayon_balle'], 2)
