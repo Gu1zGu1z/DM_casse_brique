@@ -1,5 +1,6 @@
 import pyxel, random
 
+pyxel.load("sample.pyxres")
 # défini les 
 config = { 
     'taille_x' : 152, \
