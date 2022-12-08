@@ -5,8 +5,8 @@ config = {
     'taille_x' : 152, \
     'taille_y' : 152, \
     'titre' : 'casse briques', \
-    'plateau_w' : 22, \
-    'plateau_h' : 3,  \
+    'plateau_w' : 24, \
+    'plateau_h' : 8,  \
     'vies' : 20, \
     'rayon_balle': 2, \
     'vitesse_max' : 15, \
