@@ -5,7 +5,7 @@ config = {
     'taille_x' : 152, \
     'taille_y' : 152, \
     'titre' : 'casse briques', \
-    'plateau_w' : 22, \
+    'plateau_w' : 14, \
     'plateau_h' : 3,  \
     'vies' : 20, \
     'rayon_balle': 2, \
@@ -248,7 +248,7 @@ def draw():
         # plateau (rectangle 14x3)
         pyxel.text(103, 15,"vies : %s " %str(config['vies']), 7)
         pyxel.text(103, 23,"score : %s " %str(temps + config['score']), 7)
-        pyxel.blt(plateau_x, plateau_y, 0, 128, 8, 24, 8)
+        pyxel.blt(plateau_x, plateau_y, 0, 128, 8, 14, 8)
 
         # balle (cercle)
         pyxel.circ(balle_x, balle_y, config['rayon_balle'], 2)
