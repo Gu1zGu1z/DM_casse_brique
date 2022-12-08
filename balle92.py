@@ -16,7 +16,7 @@ config = {
 # défini la taille de la fenêtre et son titre
 pyxel.init(config['taille_x'], config['taille_y'], title=config['titre'])
 
-pyxel.load("sample.pyxres")
+pyxel.load("plateau.pyxres")
 
 # ----------- Niveau ---------------------------
 niveau = 1
