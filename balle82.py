@@ -1,6 +1,5 @@
 import pyxel, random
 
-pyxel.load("sample.pyxres")
 # défini les 
 config = { 
     'taille_x' : 152, \
@@ -16,6 +15,8 @@ config = {
 }
 # défini la taille de la fenêtre et son titre
 pyxel.init(config['taille_x'], config['taille_y'], title=config['titre'])
+
+pyxel.load("sample.pyxres")
 
 # ----------- Niveau ---------------------------
 niveau = 1
