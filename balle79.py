@@ -256,7 +256,7 @@ def draw():
         global tableau
         for b in tableau:
             if (b['vie'] > 0):
-                pyxel.rect(b['x'], b['y'], b['w'], b['h'], b['couleur'])
+                pyxel.rectb(['x'], b['y'], b['w'], b['h'], b['couleur'])
                 niveau_termine = False
 
         if (niveau_termine):
