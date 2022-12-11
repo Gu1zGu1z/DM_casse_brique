@@ -262,6 +262,7 @@ def draw():
                 niveau_termine = False
 
         if (niveau_termine):
+            global niveau
             if niveau >= config['niveau_max']:
                 pyxel.text(50, 50, "NIVEAU %s TERMINE" % niveau, 7)   
                 pyxel.text(40, 60, "Vous avez gagné ", 7)  
@@ -272,7 +273,6 @@ def draw():
                 pyxel.text(50, 80, "Continuez !", 7) 
                 
             if pyxel.btn(pyxel.KEY_RETURN):
-                global niveau
                 niveau = niveau + 1
                 if niveau > config['niveau_max']:
                     # on a tout gagné                 *
