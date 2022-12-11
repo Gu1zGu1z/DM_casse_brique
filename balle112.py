@@ -101,8 +101,8 @@ def brique_explosion():
        
 
 def brique_collision(x, y, r):
-   """ définit la perte de vie des briques et l'activation de la brique 'explosion' en fonction du contact avec la balle"""
-# dit si le cercle en (x, y), rayon r touche une brique du tableau
+    """ définit la perte de vie des briques et l'activation de la brique 'explosion' en fonction du contact avec la balle"""
+    # dit si le cercle en (x, y), rayon r touche une brique du tableau
     for brique in tableau:
         if (brique['vie'] > 0) and (x + r > brique['x']) and (x -r < brique['x'] + brique['w']) \
             and (y + r > brique['y']) and (y - r < brique['y'] + brique['h']):
