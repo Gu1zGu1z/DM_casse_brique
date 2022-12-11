@@ -1,6 +1,6 @@
 import pyxel, random
 
-# défini les 
+# définit les différentes variables
 config = { 
     'taille_x' : 152, \
     'taille_y' : 152, \
@@ -13,9 +13,9 @@ config = {
     'niveau_max' : 3,
     'score' : 0
 }
-# défini la taille de la fenêtre et son titre
+# définit la taille de la fenêtre et son titre
 pyxel.init(config['taille_x'], config['taille_y'], title=config['titre'])
-
+# chargement du fichier de ressources
 pyxel.load("plateau.pyxres")
 
 # ----------- Niveau ---------------------------
@@ -29,7 +29,9 @@ plateau_x = 76
 plateau_y = 140
 
 def plateau_deplacement(x, y):
-    """déplacement avec les touches de directions"""
+    """Déplacement avec les touches de directions. Lorsque la flèche gauche est pressée,le plateau se dirige vers la gauche. 
+    Lorsque la flèche droite est pressée, le plateau se dirige vers la droite.
+    """
 
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < config['taille_x'] - config['plateau_w']):
@@ -40,7 +42,7 @@ def plateau_deplacement(x, y):
     return x, y
 
 def plateau_collision(x, y, rayon_balle):
-    # il y a 3 sections sur un plateau: retourne 1, 2, 3 en fonction de là où ça rebondit
+    """ définit les 3 sections du plateau: retourne 0, 1, 2, 3 en fonction de là où la balle rebondit"""
 
     if (y + rayon_balle >= plateau_y) and (y - rayon_balle < plateau_y + config['plateau_h']):
         if (x + rayon_balle >= plateau_x) and (x - rayon_balle < plateau_x + (config['plateau_w'] // 3) ):
@@ -62,6 +64,7 @@ def plateau_collision(x, y, rayon_balle):
 
 # --------- Briques ---------------------------
 def niveau_generation(niveau=1):
+    """définit les différents niveaux et dessine leurs briques"""
     tab = []
     # on a 3 types de briques : 
     # - les "faciles" : en un coup, elles sont détruites
@@ -78,7 +81,7 @@ def niveau_generation(niveau=1):
         tab.append({ 'x' : 100, 'y' : 30, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 3, 'couleur' : 4})
 
     elif (niveau == 3):
-        tab.append({ 'x' : 30, 'y' : 10, 'w' : 10, 'h' : 2, 'type' : 'explosion', 'vie' : 5, 'couleur': 5})
+        tab.append({ 'x' : 30, 'y' : 10, 'w' : 10, 'h' : 2, 'type' : 'explosion', 'vie' : 5, 'couleur': 8})
         tab.append({ 'x' : 70, 'y' : 10, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 3, 'couleur' : 4})
         tab.append({ 'x' : 110, 'y' : 50, 'w' : 30, 'h' : 3, 'type' : 'resistante', 'vie' : 1, 'couleur' : 4})
         tab.append({ 'x' : 20, 'y' : 50, 'w' : 30, 'h' : 3, 'type' : 'facile', 'vie' : 1, 'couleur' : 3})
@@ -90,7 +93,7 @@ def niveau_generation(niveau=1):
 tableau = niveau_generation(niveau)  
 
 def brique_explosion():
-    # lors d'une explosion, toutes les briques explosent !
+    " lors d'une explosion, toutes les briques explosent "
     for brique in tableau:
         brique['vie'] = 0
     global config
@@ -98,7 +101,8 @@ def brique_explosion():
        
 
 def brique_collision(x, y, r):
-    # dit si le cercle en (x, y), rayon r touche une brique du tableau
+   """ définit la perte de vie des briques et l'activation de la brique 'explosion' en fonction du contact avec la balle"""
+# dit si le cercle en (x, y), rayon r touche une brique du tableau
     for brique in tableau:
         if (brique['vie'] > 0) and (x + r > brique['x']) and (x -r < brique['x'] + brique['w']) \
             and (y + r > brique['y']) and (y - r < brique['y'] + brique['h']):
@@ -119,6 +123,7 @@ def brique_collision(x, y, r):
 
 # ----------- Balle ----------------------------
 def balle_generation():
+    """ définit la zone d'apparition de la balle et son angle aléatoire"""
     # création d'une nouvelle balle, en haut, au milieu
     x = config['taille_x'] // 2
     y = 15
@@ -132,6 +137,7 @@ def balle_generation():
 balle_x, balle_y, balle_angle = balle_generation()  
 
 def angles_horizontaux(angle):
+    """ """
     # on exclut les angles trop horizontaux
     if angle < 30:
         angle = 30
@@ -148,6 +154,7 @@ def angles_horizontaux(angle):
     return angle
 
 def balle_deplacement(x, y, angle, x_max = 152, y_max = 140):
+    """définit le déplacement de la balle en fonction du temps, de la collision avec le plateau et des briques """
     global config
 
     # la vitesse augmente avec le temps 
@@ -235,8 +242,6 @@ def draw():
 
     # vide la fenetre
     pyxel.cls(0)
-    sound(0)
-
     
     if (config['vies'] < 1):
         # jeu terminé
