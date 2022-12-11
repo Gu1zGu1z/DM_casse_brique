@@ -274,7 +274,7 @@ def draw():
                 pyxel.text(50, 80, "Continuez !", 7) 
                 
             if pyxel.btn(pyxel.KEY_RETURN):
-                if niveau 
+                if niveau > config['niveau_max']:
                     # on a tout gagné                 *
                     pyxel.quit()
                 else:
