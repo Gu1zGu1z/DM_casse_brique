@@ -267,17 +267,17 @@ def draw():
                 pyxel.text(50, 50, "NIVEAU %s TERMINE" % niveau, 7)   
                 pyxel.text(40, 60, "Appuyez sur ENTREE ", 7)  
                 pyxel.text(50, 80, "Continuez !", 7) 
-            if pyxel.btn(pyxel.KEY_RETURN):
-                niveau = niveau + 1
-            if niveau > config['niveau_max']:
-                pyxel.text(50, 50, "NIVEAU %s TERMINE" % niveau, 7)   
-                pyxel.text(40, 60, "Vous avez gagné! ", 7)  
-                pyxel.text(50, 80, "Bravo !", 7) 
+                if pyxel.btn(pyxel.KEY_RETURN):
+                    niveau = niveau + 1
+                if niveau > config['niveau_max']:
+                    pyxel.text(50, 50, "NIVEAU %s TERMINE" % niveau, 7)   
+                    pyxel.text(40, 60, "Vous avez gagné! ", 7)  
+                    pyxel.text(50, 80, "Bravo !", 7) 
                     # on a tout gagné                 
-                pyxel.quit()
-            else:
+                    pyxel.quit()
+                else:
                     # passage au niveau suivant
-                tableau = niveau_generation(niveau) 
+                    tableau = niveau_generation(niveau) 
                 
         
 # https://kitao.github.io/pyxel/wasm/launcher/?run=Gu1zGu1z.DM_casse_brique.balle13
