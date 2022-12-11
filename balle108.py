@@ -235,7 +235,9 @@ def draw():
 
     # vide la fenetre
     pyxel.cls(0)
+    sound(0)
 
+    
     if (config['vies'] < 1):
         # jeu terminé
         pyxel.text(50, 50, "GAME OVER", 7)   
